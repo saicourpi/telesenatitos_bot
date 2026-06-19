@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telesenatitos Perú | Conectividad 5G y Datos</title>
+    
+    <!-- Fuentes modernas de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variables y CSS Avanzado */
+        :root {
+            --color-fondo: #0a0f18;
+            --color-primario: #00e5ff;
+            --color-secundario: #7000ff;
+            --color-tarjeta: rgba(20, 25, 35, 0.6);
+            --texto-claro: #ffffff;
+            --texto-mutado: #a0aec0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--texto-claro);
+            overflow-x: hidden;
+        }
+
+        /* Declaración de animaciones */
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(30px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        @keyframes float { 
+            0% { transform: translateY(0px); } 
+            50% { transform: translateY(-12px); } 
+            100% { transform: translateY(0px); } 
+        }
+        @keyframes gradientBG { 
+            0% { background-position: 0% 50%; } 
+            50% { background-position: 100% 50%; } 
+            100% { background-position: 0% 50%; } 
+        }
+
+        /* Navbar Efecto Cristal */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(10, 15, 24, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--color-primario), #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1.5px;
+        }
+
+        nav a {
+            color: var(--texto-claro);
+            text-decoration: none;
+            margin-left: 35px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav a:hover { color: var(--color-primario); }
+
+        /* Hero Section Rediseñado */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            /* Nueva imagen súper tecnológica */
+            background: linear-gradient(to right, rgba(10, 15, 24, 0.95) 20%, rgba(10, 15, 24, 0.4)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop') center/cover;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(270deg, var(--color-primario), var(--color-secundario), var(--color-primario));
+            background-size: 200% 200%;
+            animation: gradientBG 5s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--texto-mutado);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        /* Sección de Servicios */
+        .servicios {
+            padding: 100px 8%;
+            background: var(--color-fondo);
+        }
+
+        .seccion-titulo {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 70px;
+        }
+
+        .grid-servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .tarjeta {
+            background: var(--color-tarjeta);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px 35px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-15px);
+            border-color: var(--color-primario);
+            background: rgba(30, 35, 50, 0.8);
+            box-shadow: 0 15px 30px rgba(0, 229, 255, 0.1);
+        }
+
+        .tarjeta-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            animation: float 6s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        .tarjeta h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tarjeta p {
+            color: var(--texto-mutado);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--texto-mutado);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">TELESENATITOS</div>
+        <nav>
+            <a href="#planes">Líneas Móviles</a>
+            <a href="#fibra">Fibra Óptica</a>
+            <a href="#atencion">Soporte IA</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>La Nueva Era de <br><span>Conectividad 5G</span></h1>
+            <p>Infraestructura de alta velocidad y datos ilimitados. Gestiona tu facturación, saldo y plan actual conversando directamente con nuestra Inteligencia Artificial en tiempo real.</p>
+        </div>
+    </section>
+
+    <section class="servicios">
+        <h2 class="seccion-titulo">Soluciones Tecnológicas</h2>
+        <div class="grid-servicios">
+            <div class="tarjeta">
+                <div class="tarjeta-icon">📱</div>
+                <h3>Móvil Postpago</h3>
+                <p>Navegación sin límites ni reducción de velocidad. Cobertura ininterrumpida a nivel nacional con tecnología de quinta generación.</p>
+            </div>
+            <div class="tarjeta">
+                <div class="tarjeta-icon">⚡</div>
+                <h3>Internet Hogar</h3>
+                <p>Fibra óptica pura con enrutamiento dinámico. Latencia ultra baja, ideal para transferencia masiva de datos y clases virtuales.</p>
+            </div>
+            <div class="tarjeta">
+                <div class="tarjeta-icon">🤖</div>
+                <h3>Autogestión Inteligente</h3>
+                <p>Abre el chat en la esquina inferior. El bot verificará tu DNI y extraerá tu estado de cuenta desde nuestra base de datos al instante.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Telesenatitos Perú. Arquitectura de Datos e IA.</p>
+    </footer>
+
+    <!-- SCRIPT INTACTO DE IBM WATSON ASSISTANT -->
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "6e795adf-dcbc-4937-9e2b-eb6cee1f6928", 
+            region: "https://integrations.au-syd.assistant.watson.appdomain.cloud", 
+            serviceInstanceID: "af57bf2b-2824-4970-9a69-91e941dea476", 
+            onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+            const t=document.createElement('script');
+            t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+</body>
+</html>
