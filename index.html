@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telesenatitos Perú | Conectividad 5G y Datos</title>
     
-    <!-- Fuentes modernas de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -34,11 +33,6 @@
         @keyframes fadeIn { 
             from { opacity: 0; transform: translateY(30px); } 
             to { opacity: 1; transform: translateY(0); } 
-        }
-        @keyframes float { 
-            0% { transform: translateY(0px); } 
-            50% { transform: translateY(-12px); } 
-            100% { transform: translateY(0px); } 
         }
         @keyframes gradientBG { 
             0% { background-position: 0% 50%; } 
@@ -90,7 +84,6 @@
             display: flex;
             align-items: center;
             padding: 0 8%;
-            /* Nueva imagen súper tecnológica */
             background: linear-gradient(to right, rgba(10, 15, 24, 0.95) 20%, rgba(10, 15, 24, 0.4)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop') center/cover;
             position: relative;
         }
@@ -123,10 +116,10 @@
             line-height: 1.8;
         }
 
-        /* Sección de Servicios */
-        .servicios {
+        /* Sección de Planes Móviles (Pricing Tables) */
+        .planes-moviles {
             padding: 100px 8%;
-            background: var(--color-fondo);
+            background: linear-gradient(to bottom, var(--color-fondo), #0f172a);
         }
 
         .seccion-titulo {
@@ -136,46 +129,107 @@
             margin-bottom: 70px;
         }
 
-        .grid-servicios {
+        .grid-planes {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .tarjeta {
-            background: var(--color-tarjeta);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .plan-card {
+            background: rgba(20, 25, 35, 0.8);
+            border: 1px solid rgba(0, 229, 255, 0.2);
             border-radius: 20px;
-            padding: 50px 35px;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
+            padding: 40px 30px;
             text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .tarjeta:hover {
-            transform: translateY(-15px);
+        .plan-card:hover {
+            transform: translateY(-10px);
             border-color: var(--color-primario);
-            background: rgba(30, 35, 50, 0.8);
-            box-shadow: 0 15px 30px rgba(0, 229, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15);
         }
 
-        .tarjeta-icon {
-            font-size: 4rem;
-            margin-bottom: 25px;
-            animation: float 6s ease-in-out infinite;
-            display: inline-block;
+        .plan-popular::before {
+            content: 'MÁS VENDIDO';
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: var(--color-secundario);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 5px 40px;
+            transform: rotate(45deg);
         }
 
-        .tarjeta h3 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
+        .plan-nombre {
             font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--texto-mutado);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
-        .tarjeta p {
+        .plan-precio {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--texto-claro);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .plan-precio span {
+            font-size: 1rem;
             color: var(--texto-mutado);
-            line-height: 1.7;
+            font-weight: 400;
+            margin-left: 5px;
+        }
+
+        .plan-caracteristicas {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .plan-caracteristicas li {
+            margin-bottom: 15px;
             font-size: 0.95rem;
+            color: #d1d5db;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-caracteristicas li::before {
+            content: '✓';
+            color: var(--color-primario);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .btn-contratar {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--color-primario), #0077ff);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-contratar:hover {
+            opacity: 0.9;
         }
 
         footer {
@@ -193,7 +247,6 @@
         <div class="logo">TELESENATITOS</div>
         <nav>
             <a href="#planes">Líneas Móviles</a>
-            <a href="#fibra">Fibra Óptica</a>
             <a href="#atencion">Soporte IA</a>
         </nav>
     </header>
@@ -201,29 +254,62 @@
     <section class="hero">
         <div class="hero-content">
             <h1>La Nueva Era de <br><span>Conectividad 5G</span></h1>
-            <p>Administra tu facturación, consulta tu saldo y revisa tu plan actual de manera sencilla a través de nuestro chatbot 'Telcobot'.
-            Con solo unos clics podrás gestionar tus servicios sin complicaciones, en cualquier momento y desde cualquier lugar.</p>
+            <p>Administra tu línea de manera inteligente con nuestro asistente 'TelcoBot'. Con solo ingresar tu DNI, podrás consultar al instante tu saldo, revisar tu plan actual y verificar tus fechas de corte y facturación. ¡Todo automatizado y sin tiempos de espera!</p>
         </div>
     </section>
 
-    <section class="servicios">
-        <h2 class="seccion-titulo">Soluciones Tecnológicas</h2>
-        <div class="grid-servicios">
-            <div class="tarjeta">
-                <div class="tarjeta-icon">📱</div>
-                <h3>Móvil Postpago</h3>
-                <p>Navegación sin límites ni reducción de velocidad. Cobertura ininterrumpida a nivel nacional con tecnología de quinta generación.</p>
+    <section id="planes" class="planes-moviles">
+        <h2 class="seccion-titulo">Elige el plan ideal para ti</h2>
+        <div class="grid-planes">
+            
+            <div class="plan-card">
+                <div class="plan-nombre">Básico 5G</div>
+                <div class="plan-precio">S/ 29<span>/mes</span></div>
+                <ul class="plan-caracteristicas">
+                    <li><strong>30 GB</strong> de internet en alta velocidad</li>
+                    <li>Llamadas y SMS ilimitados</li>
+                    <li>Redes sociales libres</li>
+                    <li>Cobertura nacional</li>
+                </ul>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSegAJGZfjsSiBu6W50KbeBaQY_qvwamBqUunAgtn37unumq5g/viewform" target="_blank" class="btn-contratar">Lo quiero</a>
             </div>
-            <div class="tarjeta">
-                <div class="tarjeta-icon">⚡</div>
-                <h3>Internet Hogar</h3>
-                <p>Fibra óptica pura con enrutamiento dinámico. Latencia ultra baja, ideal para transferencia masiva de datos y clases virtuales.</p>
+
+            <div class="plan-card plan-popular">
+                <div class="plan-nombre">Intermedio 5G</div>
+                <div class="plan-precio">S/ 45<span>/mes</span></div>
+                <ul class="plan-caracteristicas">
+                    <li><strong>50 GB</strong> de internet en alta velocidad</li>
+                    <li>Llamadas y SMS ilimitados</li>
+                    <li>Redes sociales libres + Video</li>
+                    <li>Roaming América</li>
+                </ul>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSegAJGZfjsSiBu6W50KbeBaQY_qvwamBqUunAgtn37unumq5g/viewform" target="_blank" class="btn-contratar">Lo quiero</a>
             </div>
-            <div class="tarjeta">
-                <div class="tarjeta-icon">🤖</div>
-                <h3>Autogestión Inteligente</h3>
-                <p>Abre el chat en la esquina inferior. El bot verificará tu DNI y extraerá tu estado de cuenta desde nuestra base de datos al instante.</p>
+
+            <div class="plan-card">
+                <div class="plan-nombre">Avanzado 5G</div>
+                <div class="plan-precio">S/ 70<span>/mes</span></div>
+                <ul class="plan-caracteristicas">
+                    <li><strong>80 GB</strong> de internet en alta velocidad</li>
+                    <li>Llamadas internacionales</li>
+                    <li>Apps de música sin consumir datos</li>
+                    <li>Suscripción a plataforma de streaming</li>
+                </ul>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSegAJGZfjsSiBu6W50KbeBaQY_qvwamBqUunAgtn37unumq5g/viewform" target="_blank" class="btn-contratar">Lo quiero</a>
             </div>
+
+            <div class="plan-card">
+                <div class="plan-nombre">Ultra Ilimitado</div>
+                <div class="plan-precio">S/ 100<span>/mes</span></div>
+                <ul class="plan-caracteristicas">
+                    <li><strong>110 GB</strong> en máxima velocidad 5G</li>
+                    <li>Internet totalmente ilimitado</li>
+                    <li>Compartir datos sin restricciones</li>
+                    <li>Atención prioritaria</li>
+                </ul>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSegAJGZfjsSiBu6W50KbeBaQY_qvwamBqUunAgtn37unumq5g/viewform" target="_blank" class="btn-contratar">Lo quiero</a>
+            </div>
+
         </div>
     </section>
 
@@ -231,7 +317,6 @@
         <p>&copy; 2026 Telesenatitos Perú </p>
     </footer>
 
-    <!-- SCRIPT INTACTO DE IBM WATSON ASSISTANT -->
     <script>
         window.watsonAssistantChatOptions = {
             integrationID: "6e795adf-dcbc-4937-9e2b-eb6cee1f6928", 
